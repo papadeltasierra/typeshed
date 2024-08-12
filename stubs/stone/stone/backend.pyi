@@ -8,7 +8,7 @@ from collections.abc import Callable, Iterator, Sequence
 import six
 from stone.ir import Api
 
-DelimTuple: Incomplete
+_DelimTuple = typing.Tuple[str, str]
 _K = typing.TypeVar("_K")
 _V = typing.TypeVar("_V")
 
@@ -16,7 +16,7 @@ def remove_aliases_from_api(api): ...
 
 class Backend(metaclass=abc.ABCMeta):
     tabs_for_indents: bool
-    cmdline_parser: argparse.ArgumentParser
+    cmdline_parser: typing.Optional[argparse.ArgumentParser]
     preserve_aliases: bool
     logger: Incomplete
     target_folder_path: Incomplete
@@ -61,11 +61,11 @@ class CodeBackend(Backend, metaclass=abc.ABCMeta):
         items: list[str],
         before: str = "",
         after: str = "",
-        delim: DelimTuple = ("(", ")"),
+        delim: _DelimTuple = ("(", ")"),
         compact: bool = True,
         sep: str = ",",
         skip_last_sep: bool = False,
     ) -> None: ...
     def block(
-        self, before: str = "", after: str = "", delim: DelimTuple = ("{", "}"), dent: int | None = None, allman: bool = False
+        self, before: str = "", after: str = "", delim: _DelimTuple = ("{", "}"), dent: int | None = None, allman: bool = False
     ) -> Iterator[None]: ...

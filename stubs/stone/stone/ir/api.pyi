@@ -3,9 +3,7 @@ from _typeshed import Incomplete
 
 from stone.frontend.ast import AstRouteDef
 
-from .data_types import Alias, Annotation, AnnotationType, Nullable as Nullable, Struct, UserDefined
-
-NamespaceDict: Incomplete
+from .data_types import Alias, Annotation, AnnotationType, Struct, UserDefined
 
 class Api:
     version: Incomplete

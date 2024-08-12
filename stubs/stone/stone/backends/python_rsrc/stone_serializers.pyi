@@ -1,6 +1,7 @@
 import typing
 from _typeshed import Incomplete
 from collections.abc import Callable, Mapping
+from functools import partial
 
 from stone.backends.python_rsrc import stone_base as bb, stone_validators as bv
 
@@ -117,11 +118,3 @@ def json_compat_obj_decode(
     old_style: bool = False,
     for_msgpack: bool = False,
 ): ...
-
-msgpack_compat_obj_encode: Incomplete
-
-def msgpack_encode(data_type, obj): ...
-
-msgpack_compat_obj_decode: Incomplete
-
-def msgpack_decode(data_type, serialized_obj, alias_validators: Incomplete | None = None, strict: bool = True): ...

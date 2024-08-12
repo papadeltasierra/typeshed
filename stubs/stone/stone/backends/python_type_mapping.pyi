@@ -1,13 +1,13 @@
 from _typeshed import Incomplete
 from typing_extensions import TypeAlias
+import typing
 
 from stone.ir import ApiNamespace, DataType
 
 MYPY: bool
-DataTypeCls: TypeAlias = type[DataType]
-Callback: Incomplete
-OverrideDefaultTypesDict: TypeAlias = dict[DataTypeCls, Callback]
+OverrideDefaultTypesDict: str
+_OverrideDefaultTypesDict = typing.TypeVar("_OverrideDefaultTypesDict")
 
 def map_stone_type_to_python_type(
-    ns: ApiNamespace, data_type: DataType, override_dict: OverrideDefaultTypesDict | None = None
+    ns: ApiNamespace, data_type: DataType, override_dict: _OverrideDefaultTypesDict | None = None
 ) -> str: ...

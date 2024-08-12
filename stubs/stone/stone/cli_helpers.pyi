@@ -1,5 +1,6 @@
-import abc
+from abc import abstractmethod, ABCMeta
 from _typeshed import Incomplete
+import typing
 
 class FilterExprLexer:
     tokens: tuple[str, ...]
@@ -40,9 +41,9 @@ class FilterExprParser:
     def p_primitive(self, p) -> None: ...
     def p_error(self, token) -> None: ...
 
-class FilterExpr(metaclass=abc.ABCMeta):
-    __metaclass__ = abc.ABCMeta
-    @abc.abstractmethod
+class FilterExpr:
+    __metaclass__: type[ABCMeta]
+    @abstractmethod
     def eval(self, route): ...
 
 class FilterExprConjunction:

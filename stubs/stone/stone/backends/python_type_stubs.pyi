@@ -1,7 +1,6 @@
 from _typeshed import Incomplete
 
 from stone.backend import CodeBackend
-from stone.backends.python_type_mapping import OverrideDefaultTypesDict as OverrideDefaultTypesDict
 from stone.ir import Api, ApiNamespace, DataType
 
 class ImportTracker:
