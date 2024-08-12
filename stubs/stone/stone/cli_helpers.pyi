@@ -1,6 +1,5 @@
-from abc import abstractmethod, ABCMeta
 from _typeshed import Incomplete
-import typing
+from abc import ABCMeta, abstractmethod
 
 class FilterExprLexer:
     tokens: tuple[str, ...]

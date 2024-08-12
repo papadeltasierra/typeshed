@@ -118,3 +118,5 @@ def json_compat_obj_decode(
     old_style: bool = False,
     for_msgpack: bool = False,
 ): ...
+msgpack_compat_obj_encode: partial
+

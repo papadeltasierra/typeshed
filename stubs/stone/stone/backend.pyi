@@ -1,22 +1,24 @@
 import abc
 import argparse
-import typing
 from _typeshed import Incomplete
 from abc import abstractmethod
 from collections.abc import Callable, Iterator, Sequence
+from typing import Tuple, TypeVar  # noqa: Y022
 
 import six
 from stone.ir import Api
 
-_DelimTuple = typing.Tuple[str, str]
-_K = typing.TypeVar("_K")
-_V = typing.TypeVar("_V")
+# TypeAlias is not available pre Python 3.10.
+# ruff: noqa: UP006
+_DelimTuple = Tuple[str, str]  # noqa: Y026
+_K = TypeVar("_K")
+_V = TypeVar("_V")
 
 def remove_aliases_from_api(api): ...
 
 class Backend(metaclass=abc.ABCMeta):
     tabs_for_indents: bool
-    cmdline_parser: typing.Optional[argparse.ArgumentParser]
+    cmdline_parser: argparse.ArgumentParser | None
     preserve_aliases: bool
     logger: Incomplete
     target_folder_path: Incomplete
