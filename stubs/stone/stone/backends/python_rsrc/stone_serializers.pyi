@@ -1,7 +1,6 @@
 import typing
 from _typeshed import Incomplete
 from collections.abc import Callable, Mapping
-from functools import partial
 
 from stone.backends.python_rsrc import stone_base as bb, stone_validators as bv
 
